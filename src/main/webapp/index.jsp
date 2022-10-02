@@ -23,6 +23,8 @@
 
 <h2>eller opret dig som ny bruger </h2>
 
+${requestScope.besked}
+
 <form action="login" method="post">
     <label for="navn">Navn:</label><br>
     <input type="text" id="navn" name="navn" value=""><br>

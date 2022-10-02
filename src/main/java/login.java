@@ -33,8 +33,20 @@ public class login extends HttpServlet
         if (navn.equals("") || kode1.equals("") || kode2.equals("")) {
 
             log("bruger opl ikke udfyldt korekt ved opret bruger");
-            String bested = "husk at udfylde alle felter !";
+
+            String besked = "husk at udfylde alle felter !";
+
+            request.setAttribute("besked", besked );
             request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+
+        if (!kode1.equals(kode2)) {
+
+            String besked = "Kodene du angiv var ikke ens !";
+            request.setAttribute("besked", besked );
+
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+
         }
 
 

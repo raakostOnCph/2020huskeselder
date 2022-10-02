@@ -6,6 +6,9 @@
 </head>
 <body>
 <h1><%= "Wekommen til dine online huskesedle ! " %>
+    <br>
+    ${sessionScope.id}
+
 </h1>
 <br/>
 

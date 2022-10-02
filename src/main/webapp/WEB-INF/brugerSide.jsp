@@ -14,6 +14,13 @@
 
 <h1> Velkommen til din bruger side</h1>
 du er logget ind med navnet ${requestScope.navn}
+og dit sessionid er ${sessionScope.id}
+
+<form action="BrugerServlet">
+
+    <input type="submit" value="lock ud">
+
+
 
 </body>
 </html>

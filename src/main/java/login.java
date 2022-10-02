@@ -63,6 +63,11 @@ public class login extends HttpServlet
         }
 
         log("navn og kode var rigtig for eksistenede bruger");
+
+        HttpSession  session = request.getSession();
+        session.setAttribute("id", session.getId());
+
+
         request.setAttribute("navn",navn);
         request.getRequestDispatcher("WEB-INF/brugerSide.jsp").forward(request, response);
 
@@ -119,6 +124,10 @@ public class login extends HttpServlet
 
         brugerMap.put(navn, bruger);
         request.setAttribute("navn", navn);
+
+        HttpSession session = request.getSession();
+        session.setAttribute("id", session.getId());
+
         request.getRequestDispatcher("WEB-INF/brugerSide.jsp").forward(request, response);
 
 

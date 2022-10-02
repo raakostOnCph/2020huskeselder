@@ -25,11 +25,19 @@ public class login extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
 
-
-
         String navn = request.getParameter("navn");
         String kode1 = request.getParameter("kode1");
         String kode2 = request.getParameter("kode2");
+
+
+        if (navn.equals("") || kode1.equals("") || kode2.equals("")) {
+
+            log("bruger opl ikke udfyldt korekt ved opret bruger");
+            String bested = "husk at udfylde alle felter !";
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+
+
 
 
       //  System.out.println("vi ramte min login serlvet via Post med parametrene " + navn + ", " + kode1 + "; " + kode2 );

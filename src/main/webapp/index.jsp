@@ -12,8 +12,8 @@
 <h2> Login som eksisterende bruger </h2>
 
 <form action="login">
-    <label for="navnogin">Navn:</label><br>
-    <input type="text" id="navnogin" name="navnogin" value="John"><br>
+    <label for="navnLogin">Navn:</label><br>
+    <input type="text" id="navnLogin" name="navnLogin" value=""><br>
     <label for="kodeLogin">Kode:</label><br>
     <input type="text" id="kodeLogin" name="kodeLogin" value=""><br><br>
     <input type="submit" value="login">

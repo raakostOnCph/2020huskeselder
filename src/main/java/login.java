@@ -12,9 +12,12 @@ public class login extends HttpServlet
     {
 
 
+        String navn = request.getParameter("navnLogin");
+        String kode = request.getParameter("kodeLogin");
 
-        System.out.println("vi ramte min login serlvet via Get");
+//        System.out.println("vi ramte min login serlvet via Get med parametrene " + navn + ", " + kode );
 
+        log("vi ramte min login serlvet via Get med parametrene " + navn + ", " + kode );
 
     }
 
@@ -22,8 +25,15 @@ public class login extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
 
-        System.out.println("vi ramte min login serlvet via Post");
 
+
+        String navn = request.getParameter("navn");
+        String kode1 = request.getParameter("kode1");
+        String kode2 = request.getParameter("kode2");
+
+
+      //  System.out.println("vi ramte min login serlvet via Post med parametrene " + navn + ", " + kode1 + "; " + kode2 );
+        log("vi ramte min login serlvet via Post med parametrene " + navn + ", " + kode1 + "; " + kode2);
 
     }
 }

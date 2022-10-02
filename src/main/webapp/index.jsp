@@ -11,6 +11,8 @@
 
 <h2> Login som eksisterende bruger </h2>
 
+${requestScope.LoginFejl}
+
 <form action="login">
     <label for="navnLogin">Navn:</label><br>
     <input type="text" id="navnLogin" name="navnLogin" value=""><br>

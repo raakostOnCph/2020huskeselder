@@ -3,10 +3,29 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "login", value = "/login")
 public class login extends HttpServlet
 {
+
+    Map<String, Bruger> brugerMap = new HashMap<>();
+
+    @Override
+    public void init() throws ServletException
+    {
+       Bruger bruger1 = new  Bruger("nik", "1");
+     Bruger bruger2 = new Bruger("lone", "2");
+
+     brugerMap.put(bruger1.navn, bruger1);
+     brugerMap.put(bruger2.navn, bruger2);
+
+       // super.init();
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
@@ -16,8 +35,27 @@ public class login extends HttpServlet
         String kode = request.getParameter("kodeLogin");
 
 //        System.out.println("vi ramte min login serlvet via Get med parametrene " + navn + ", " + kode );
-
         log("vi ramte min login serlvet via Get med parametrene " + navn + ", " + kode );
+
+        if (navn.equals("") || kode.equals("")) {
+
+            String loginFejl = "Noget gik galt, tjeck navn eller kode og prøv igen";
+            request.setAttribute("LoginFejl",loginFejl);
+            request.getRequestDispatcher("index.jsp").forward(request,response);
+
+        }
+
+        if (!brugerMap.containsKey(navn)) {
+
+            String loginFejl = "Brugeren findes ikke, gå til opret bruger eller tjeck dit navn";
+            request.setAttribute("LoginFejl",loginFejl);
+            request.getRequestDispatcher("index.jsp").forward(request,response);
+        }
+
+
+
+
+
 
     }
 

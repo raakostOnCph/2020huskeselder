@@ -101,8 +101,18 @@ public class login extends HttpServlet
         }
 
 
+        if (brugerMap.containsKey(navn)) {
+
+            String besked = "Der findes allerede en bruger med det navn, prøv igen !";
+            request.setAttribute("besked", besked );
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+
+        }
+
+
 
         log("oprettelse af brugeren gik fint ");
+
         request.setAttribute("navn", navn);
         request.getRequestDispatcher("WEB-INF/brugerSide.jsp").forward(request, response);
 

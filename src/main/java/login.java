@@ -53,6 +53,19 @@ public class login extends HttpServlet
         }
 
 
+        if (brugerMap.containsKey(navn) && !kode.equals(brugerMap.get(navn) .getKode()  ) ) {
+
+            System.out.println(brugerMap.get(navn));
+
+            String loginFejl = "Noget gik galt, kode du angav er forkert !";
+            request.setAttribute("LoginFejl",loginFejl);
+            request.getRequestDispatcher("index.jsp").forward(request,response);
+        }
+
+        log("navn og kode var rigtig for eksistenede bruger");
+        request.setAttribute("navn",navn);
+        request.getRequestDispatcher("WEB-INF/brugerSide.jsp").forward(request, response);
+
 
 
 

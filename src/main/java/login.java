@@ -51,9 +51,17 @@ public class login extends HttpServlet
 
 
 
+        log("oprettelse af brugeren gik fint ");
+        request.setAttribute("navn", navn);
+        request.getRequestDispatcher("WEB-INF/brugerSide.jsp").forward(request, response);
+
+
+
+
+
 
       //  System.out.println("vi ramte min login serlvet via Post med parametrene " + navn + ", " + kode1 + "; " + kode2 );
-        log("vi ramte min login serlvet via Post med parametrene " + navn + ", " + kode1 + "; " + kode2);
+        // log("vi ramte min login serlvet via Post med parametrene " + navn + ", " + kode1 + "; " + kode2);
 
     }
 }

@@ -11,7 +11,7 @@
 
 <h2> Login som eksisterende bruger </h2>
 
-<form action="/action_page.php">
+<form action="login">
     <label for="navnogin">Navn:</label><br>
     <input type="text" id="navnogin" name="navnogin" value="John"><br>
     <label for="kodeLogin">Kode:</label><br>
@@ -23,7 +23,7 @@
 
 <h2>eller opret dig som ny bruger </h2>
 
-<form action="/action_page.php">
+<form action="login" method="post">
     <label for="navn">Navn:</label><br>
     <input type="text" id="navn" name="navn" value=""><br>
     <label for="kode1">Kode:</label><br>

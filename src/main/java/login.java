@@ -111,8 +111,13 @@ public class login extends HttpServlet
 
 
 
-        log("oprettelse af brugeren gik fint ");
+        log("oprettelse af brugeren gik fint " );
 
+        Bruger bruger = new Bruger(navn,kode1);
+        log("opretter bruger " + bruger.toString() );
+
+
+        brugerMap.put(navn, bruger);
         request.setAttribute("navn", navn);
         request.getRequestDispatcher("WEB-INF/brugerSide.jsp").forward(request, response);
 

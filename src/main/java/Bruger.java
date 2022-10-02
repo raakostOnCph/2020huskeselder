@@ -19,4 +19,10 @@ public class Bruger
     {
         return kode;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Bruger{" + "navn='" + navn + '\'' + ", kode='" + kode + '\'' + '}';
+    }
 }
